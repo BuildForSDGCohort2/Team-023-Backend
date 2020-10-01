@@ -29,6 +29,7 @@ db.once('open', () => console.log('db connected'));
 
 // Route handlers
 const provider = require("./routes/provider");
+const apply = require("./routes/apply");
 
 // App configuration
 app.use(cors());
@@ -37,6 +38,7 @@ app.use(bodyParser.json());
 
 // Routes
 app.use("/provider", provider);
+app.use("/apply", apply);
 
 app.use((err, req, res, next) => errorHandler(err, req, res, next));
 

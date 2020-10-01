@@ -11,7 +11,7 @@ const ProviderSchema = new mongoose.Schema({
   address: String,
   email: String,
   phoneNumber: String,
-  signupURL: String,
+  shortid: String,
   created: Date,
 });
 
