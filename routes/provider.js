@@ -17,6 +17,7 @@ router.get("/:id", (req, res, next) => {
       console.log('Error finding provider', err);
       return next(err);
     }
+    console.log('Successfully obtained provider', provider._id);
     res.status(200).json({ message: 'Successfully obtained provider', provider });
   });
 });
@@ -51,7 +52,7 @@ router.post("/", (req, res, next) => {
     address,
     email,
     phoneNumber,
-    signupURL: `${process.env.FRONTEND_URL}/apply/${shortid.generate()}`,
+    shortid: shortid.generate(),
     created: Date.now()
   });
   newProvider.save((err, provider) => {
