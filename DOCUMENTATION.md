@@ -37,6 +37,7 @@ Please note:
   "address": "VI, Lagos",
   "email": "t2b@tb.org",
   "phoneNumber": "08099888880",
+  "password": "password"
 }
 ```
 **responses**
@@ -52,6 +53,7 @@ Please note:
       "email": "t2b@tb.org",
       "phoneNumber": "08099888880",
       "shortid": "O1unRp0Zs",
+      "pasword": "$2b$10$s2ccde.CqH3sPAAG3SWGw.6phkH29sP47.Q8R0Q6wdek9GVD/u0by",
       "created": "2020-09-30T08:27:07.153Z",
       "__v": 0
   }
@@ -61,6 +63,53 @@ Please note:
 ```json
 {
   "message": "Missing params email"
+}
+```
+**POST** `/provider/login` Logs in an existing provider
+
+**params** 
+```json
+{
+  "email": "t2b@tb.org",
+  "password": "password"
+}
+```
+**responses**
+
+200
+```json
+{
+  "message": "Successfully logged in provider",
+  "provider": {
+    "_id": "5f76c3e2eba64b2ec26e4ac6",
+    "businessName": "Merhoni Styles",
+    "address": "Lekki, Lagos",
+    "email": "merhoni@tb.org",
+    "phoneNumber": "0801234567890",
+    "shortid": "MrWKKNjqT",
+    "password": "$2b$10$s2ccde.CqH3sPAAG3SWGw.6phkH29sP47.Q8R0Q6wdek9GVD/u0by",
+    "created": "2020-10-02T06:08:34.139Z",
+    "__v": 0,
+    "token": "6d7f5680-e618-4ec8-b0b3-446643b96319"
+  }
+}
+```
+400
+```json
+{
+  "message": "Missing params email"
+}
+```
+401
+```json
+{
+  "message": "Invalid provider password"
+}
+```
+404
+```json
+{
+  "message": "Provider record not found"
 }
 ```
 ***
