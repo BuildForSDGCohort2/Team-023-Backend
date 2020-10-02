@@ -9,9 +9,11 @@ const mongoose = require("mongoose");
 const ProviderSchema = new mongoose.Schema({
   businessName: String,
   address: String,
-  email: String,
-  phoneNumber: String,
+  email: { type: String, unique: true },
+  phoneNumber: { type: String, unique: true },
   shortid: String,
+  password: String,
+  token: String,
   created: Date,
 });
 
