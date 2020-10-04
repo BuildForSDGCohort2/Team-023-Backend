@@ -95,7 +95,7 @@ router.post("/", (req, res, next) => {
 /**
  * POST Provider - Login an existing provider
  */
-router.post("/login", (req, res) => {
+router.post("/login", (req, res, next) => {
   // Handle missing params
   if (
     !req.body.hasOwnProperty("email") ||
