@@ -30,7 +30,7 @@ db.once('open', () => console.log('db connected'));
 // Route handlers
 const provider = require("./routes/provider");
 const apply = require("./routes/apply");
-const fb = require("./routes/fb");
+const dashboard = require("./routes/dashboard/dashboard");
 
 // App configuration
 app.use(cors());
@@ -40,7 +40,7 @@ app.use(bodyParser.json());
 // Routes
 app.use("/provider", provider);
 app.use("/apply", apply);
-app.use("/fb", fb);
+app.use("/dashboard", dashboard);
 
 app.use((err, req, res, next) => errorHandler(err, req, res, next));
 
